@@ -1,0 +1,41 @@
+.box-card {
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    .card-header {
+      display: flex;
+      .detail {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 90%;
+        .el-form-item {
+          margin-bottom: 11px;
+        }
+        .username {
+          font-size: 25px;
+          font-weight: 600;
+        }
+        .but {
+          display: flex;
+          justify-content: space-between;
+          .el-form-item {
+            margin: 0;
+          }
+          .upload-but {
+            display: flex;
+            i {
+              margin: 0 5px;
+              font-size: 25px;
+              color: #909399;
+            }
+            i:hover {
+              color: black;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }

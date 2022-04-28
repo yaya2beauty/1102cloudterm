@@ -1,0 +1,59 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background: rgb(218, 222, 224);
+  
+    display: flex;
+    /* // justify-content: center;
+    // align-items: center; */
+    margin: auto;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }  
+.loginform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 426px;
+    padding: 36px 78px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+  }
+  .loginttt {
+    padding: 0px 0 30px;
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(13, 48, 77);
+    letter-spacing: 2px;
+  }
+  .aaa {
+    padding: auto;
+  }
+  .loginbtn {
+    width: 120px;
+    height: 34px;
+    border-radius: 4px;
+    margin-top: 32px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4db3ff;
+    letter-spacing: 3px;
+  }
+  .common-input {
+    width: 270px;
+    height: 40px;
+    padding-left: 10px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    background-color: #f5f5fa;
+    border: 1px solid transparent;
+    outline: none;
+    color: #666;
+    border-radius: 4px;
+  }
