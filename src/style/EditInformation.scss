@@ -1,0 +1,30 @@
+.EditInformation{
+    flex-direction:row;
+}
+.title{
+    justify-content:center;
+    margin-top:40px;
+    margin-bottom: 20px;
+    align-items:center;
+    display:flex;
+    font-size: 24px;
+    color:#6087BF
+}
+.allitem{
+    // justify-content:center;
+    // align-items:center;
+    // display:flex;
+    width: 400px;
+    // flex-direction: row;
+    margin:0 auto;
+}
+.item{
+    display:flex;
+    align-items: center;
+    margin-top:20px;
+    font-size: 16px;
+    justify-content: space-between;
+}
+Button{
+    color:#6087BF
+}

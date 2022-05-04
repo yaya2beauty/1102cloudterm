@@ -46,6 +46,12 @@
     }
     .card-content {
       font-weight: 400;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      img{
+        width: 30%;
+      }
     }
     .like-com {
       display: flex;

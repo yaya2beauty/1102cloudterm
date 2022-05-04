@@ -11,13 +11,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     
   }  
 .loginform {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 426px;
+    // width: 426px;
+    width: 50%;
     padding: 36px 78px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -27,23 +29,26 @@
     padding: 0px 0 30px;
     margin: 0;
     text-align: center;
-    font-size: 40px;
-    color: rgb(13, 48, 77);
-    letter-spacing: 2px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight:bold;
+    display: flex;
+    align-items: center;
   }
   .aaa {
     padding: auto;
   }
   .loginbtn {
-    width: 120px;
+    width: 80px;
     height: 34px;
     border-radius: 4px;
-    margin-top: 32px;
-    line-height: 34px;
+    margin: 20px;
     font-size: 14px;
     color: #fff;
-    background-color: #4db3ff;
+    background-color: #6087BF;
     letter-spacing: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
   }
   .common-input {
     width: 270px;
@@ -51,9 +56,18 @@
     padding-left: 10px;
     line-height: 40px;
     margin-bottom: 10px;
-    background-color: #f5f5fa;
-    border: 1px solid transparent;
-    outline: none;
-    color: #666;
+    // background-color: #f5f5fa;
+    // border: 1px solid transparent;
+    // color: #666;
+    border-radius: 10px;
+  }
+  .signinbtn {
+    width: 80px;
+    height: 34px;
     border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #6087BF;
+    letter-spacing: 3px;
+    border: 1px solid transparent;
   }

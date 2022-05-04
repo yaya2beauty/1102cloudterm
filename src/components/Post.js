@@ -36,11 +36,11 @@ class Post extends Component {
             <div>
                 <Card className="box-card">
                     <div className="card-header" >
-                        <Avatar size={40} icon={<UserOutlined />} />
+                        <Avatar size={40} src={require('../assets/user/user.jpg')} />
                         <div className="detail">
                             <Form onFinish={this.onFinish}>
                                 <Form.Item name="post">
-                                    <TextArea placeholder="你正在想什麼呢?" showCount maxLength={100} style={{ height: 80 }} />
+                                    <TextArea placeholder="你正在想什麼呢?" showCount maxLength={100} style={{ height: 80}} />
                                 </Form.Item>
                                 <div style={{display: 'flex',justifyContent:'end'}}>
                                     <Form.Item
@@ -53,7 +53,7 @@ class Post extends Component {
                                         </Upload>
                                     </Form.Item>
                                     <Form.Item>
-                                        <Button type="primary" htmlType="submit" style={{marginLeft:'10px',background:'#6087BF',color:'#FFF',borderRadius:'6px'}}>
+                                        <Button htmlType="submit" style={{marginLeft:'10px',background:'#6087BF',color:'#FFF',borderRadius:'6px'}}>
                                             發佈
                                         </Button>
                                     </Form.Item>

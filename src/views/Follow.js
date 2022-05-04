@@ -1,96 +1,94 @@
-import React, { Component} from 'react';
+import React, { Component } from "react";
 // import '../style/Community.scss'
-import { Input, Avatar,Button } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { Input, Avatar, Button } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
 class Follow extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            followlist:
-                [
-                    {
-                      id: 1,
-                      name: "嫩煎魚排佐鮮蔬",
-                      price: 350,
-                      url: "https://i.imgur.com/o8cd4Rw.jpg",
-                    },
-                    {
-                      id: 2,
-                      name: "清炒番茄義大利麵",
-                      price: 180,
-                      url: "https://i.imgur.com/KRboztK.jpg",
-                    },
-                    {
-                      id: 3,
-                      name: "九層塔沙拉",
-                      price: 120,
-                      url: "https://i.imgur.com/Yg1t5sW.jpg",
-                    },
-                    {
-                      id: 4,
-                      name: "澳洲牛排佐松露醬",
-                      price: 450,
-                      url: "https://i.imgur.com/uzJbxW5.jpg",
-                    },
-                    {
-                        id: 1,
-                        name: "嫩煎魚排佐鮮蔬",
-                        price: 350,
-                        url: "https://i.imgur.com/o8cd4Rw.jpg",
-                      },
-                      {
-                        id: 2,
-                        name: "清炒番茄義大利麵",
-                        price: 180,
-                        url: "https://i.imgur.com/KRboztK.jpg",
-                      },
-                      {
-                        id: 3,
-                        name: "九層塔沙拉",
-                        price: 120,
-                        url: "https://i.imgur.com/Yg1t5sW.jpg",
-                      },
-                      {
-                        id: 4,
-                        name: "澳洲牛排佐松露醬",
-                        price: 450,
-                        url: "https://i.imgur.com/uzJbxW5.jpg",
-                      },
-                  ]
-            
-            
-        }
-    }
-    onSearch = value => console.log(value);
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchtext:'',
+      followlist: [
+        {
+          id: "001",
+          name: "Betty",
+          price: 350,
+          url: require('../assets/uu/cat1.jpg')
+        },
+        {
+          id: "003",
+          name: "POPO",
+          price: 180,
+          url: require('../assets/uu/cat2.jpg'),
+        },
+        {
+          id: "004",
+          name: "LOO",
+          price: 120,
+          url: require('../assets/uu/cat3.jpg'),
+        },
+      ],
+    };
+  }
+  onSearch = (value) =>{
+    this.setState({searchtext:value})
+  } 
+  getSearch=()=>{
+    const { followlist } = this.state;
+    return (followlist.filter(data => {
+      return (data.name.toUpperCase()).includes(this.state.searchtext.toUpperCase());
+    }))
+  }
 
-    render() {
-        return (
-            <div style={{ display: 'flex',flexDirection: 'column',alignItems: 'center',paddingTop:'20px'}}>
-                <Search placeholder="搜尋" onSearch={this.onSearch} style={{ width: 300}} />
-                <div style={{width:'40%'}}>
-                {this.state.followlist.map((followitem,key)=>(
-                    <div key={key} style={{display:'flex',alignItems:'center',margin:'5%',flex:1}}>
-                        <div style={{display:'flex',justifyContent:'center',flex:0.2}}>
-                            <Avatar size={40} icon={<UserOutlined />} />
-                        </div>
-                        <div style={{flex:0.7}}>{followitem['name']}</div>
-                        <div  style={{flex:0.1}}>
-                        <Button style={{background:'#6087BF',color:'#FFF',borderRadius:'6px'}}>
-                            追蹤
-                        </Button>
-                        </div>
-                    </div>
-                ))}
-                </div>
-            
+  render() {
+    const searchData=this.getSearch()
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          paddingTop: "20px",
+        }}
+      >
+        <Search
+          placeholder="搜尋"
+          onSearch={this.onSearch}
+          style={{ width: 300 }}
+        />
+        <div style={{ width: "40%" }}>
+          {searchData.map((followitem, key) => (
+            <div
+              key={key}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                margin: "5%",
+                flex: 1,
+                justifyContent:'space-between'
+              }}
+            >
+              <div style={{ cursor: "pointer", display: "flex", alignItems: "center", }}
+                onClick={() => {
+                  this.props.history.push({
+                    pathname: "/User",
+                    search: "?query=" + followitem.id,
+                    state: { followitem: followitem },
+                  });
+                }}>
+                <Avatar size={40} src={followitem.url} style={{ marginRight: '18px' }} />
+                {followitem["name"]}
+              </div>
+
+              <Button style={{ background: "#6087BF", color: "#FFF", borderRadius: "6px" }} >
+                追蹤
+              </Button>
             </div>
-
-
-        )
-    }
-
-
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
 export default Follow;

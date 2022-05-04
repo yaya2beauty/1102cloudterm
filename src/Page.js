@@ -7,6 +7,7 @@ import Like from './views/Like';
 import Follow from './views/Follow';
 import Manager from './views/Manager';
 import Login from './views/Login';
+import EditInformation from './views/EditInformation';
 class Page extends Component {
     constructor(props) {
         super(props)
@@ -25,6 +26,7 @@ class Page extends Component {
                     <RouteApp path={"/Like"} component={Like} />
                     <RouteApp path={"/Follow"} component={Follow} />
                     <RouteApp path={"/Manager"} component={Manager} />
+                    <RouteApp path={"/EditInformation"} component={EditInformation} />
                     <Route path="/" render={() => {
                         // return JSON.parse(window.localStorage.getItem("userinfo")) ? <Redirect to="/Home" username={this.state.username} /> : <Login login={this.login} changedata={this.changedata} isLogin={this.state.isLogin} />
                         const userinfo = JSON.parse(window.localStorage.getItem("userinfo"))
@@ -35,7 +37,6 @@ class Page extends Component {
                                 return <Redirect to="/Manager" username={this.state.username} />
                              }else{
                                 return <Redirect to="/Home" username={this.state.username} />
-                                
                              }
                         }else{ 
                              return <Login login={this.login} changedata={this.changedata} isLogin={this.state.isLogin} />
